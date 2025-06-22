@@ -1,4 +1,4 @@
-# API RESTful - Loja Online (Exercício)
+# Exercício API RESTful - Loja Online (domínio Produtos)
 
 Este projeto é uma API RESTful desenvolvida em Django e Django REST Framework como parte de um exercício. A API implementa operações CRUD para gerenciar produtos de uma loja online.
 
