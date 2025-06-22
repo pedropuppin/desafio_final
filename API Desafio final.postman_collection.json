@@ -834,6 +834,111 @@
 					]
 				},
 				{
+					"name": "Atualizar Produto Parcialmente",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Meu Produto\",\r\n    \"descricao\": \"Uma descrição.\",\r\n    \"preco\": \"200.00\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/produtos/{{id}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								"{{id}}",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucesso 200 OK - Atualizar Parcialmente",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Meu Produto\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/produtos/{{id}}/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"{{id}}",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 19:35:48 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"nome\": \"Meu Produto\",\n    \"descricao\": \"Quis sequi esse magnam blanditiis odio blanditiis ad libero officia aliquid excepturi.\",\n    \"preco\": \"618.75\",\n    \"data_criacao\": \"2025-06-22T16:26:48.281012Z\"\n}"
+						}
+					]
+				},
+				{
 					"name": "Deletar Produto",
 					"request": {
 						"method": "DELETE",
@@ -1010,7 +1115,7 @@
 		},
 		{
 			"key": "id",
-			"value": "30"
+			"value": "1"
 		}
 	]
 }
