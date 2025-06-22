@@ -1,0 +1,1016 @@
+{
+	"info": {
+		"_postman_id": "25246a18-fd1a-46f5-9400-bf9f0d011cd4",
+		"name": "API Desafio final",
+		"description": "# 🚀 API de Produtos\n\nBem-vindo à documentação oficial da API de Produtos da Loja Online.\n\nEsta API permite realizar operações de CRUD (Criar, Ler, Atualizar, Excluir) sobre o nosso catálogo de produtos.\n\nAtualmente, a API é pública e não requer autenticação.\n\n## 🔖 Base URL\n\nO ambiente de desenvolvimento utiliza a seguinte URL base: \\`[http://127.0.0.1:8000/api_v1](http://127.0.0.1:8000/)\\`\n\n[<br><br><br>](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25774045"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Listar Todos os Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/produtos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								""
+							]
+						},
+						"description": "## Get Produtos\n\nRetorna uma lista paginada de todos os produtos cadastrados no sistema. Os resultados são ordenados por nome em ordem alfabética.\n\n### Request\n\n- **Método**: GET\n    \n- **Endpoint**: `{{base_url}}/produtos/`\n    \n\n### Response\n\nRetorna um objeto JSON contendo um array de Produtos. Cada objeto de Produto vai incluir os seguintes campos:\n\n- `id`: identificador único do Produto.\n    \n- `nome`: nome do Produto.\n    \n- `descricao`: descrição detalhada do Produto.\n    \n- `preco`: preço do Produto.\n    \n- `data_criacao`: data de criação do Produto.\n    \n\n### Examplo da estrutura\n\n``` json\n{\n  \"products\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": \"number\",\n      \"data_criacao\": \"date\"\n    }\n  ]\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Sucesso 200 OK - Lista de Produtos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produtos/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:28:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4600"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 11,\n        \"nome\": \"Amet Nostrum\",\n        \"descricao\": \"Accusamus quasi numquam quibusdam at provident fugiat ipsum fugit qui at.\",\n        \"preco\": \"825.96\",\n        \"data_criacao\": \"2025-06-22T16:26:48.314060Z\"\n    },\n    {\n        \"id\": 25,\n        \"nome\": \"Aperiam Unde\",\n        \"descricao\": \"Nemo ratione molestias alias aliquid neque illo vel expedita repudiandae magnam veniam quis.\",\n        \"preco\": \"454.30\",\n        \"data_criacao\": \"2025-06-22T16:26:48.356279Z\"\n    },\n    {\n        \"id\": 7,\n        \"nome\": \"Consequuntur Nesciunt\",\n        \"descricao\": \"Ab officia aliquid rem doloremque provident possimus iste labore quis.\",\n        \"preco\": \"774.38\",\n        \"data_criacao\": \"2025-06-22T16:26:48.301222Z\"\n    },\n    {\n        \"id\": 23,\n        \"nome\": \"Debitis Soluta\",\n        \"descricao\": \"Minus aliquid repellendus perspiciatis fuga explicabo fuga laborum odio fugit.\",\n        \"preco\": \"104.87\",\n        \"data_criacao\": \"2025-06-22T16:26:48.349193Z\"\n    },\n    {\n        \"id\": 14,\n        \"nome\": \"Delectus A\",\n        \"descricao\": \"Eligendi deserunt laboriosam sunt quod minima iste magni dolorum veniam rerum.\",\n        \"preco\": \"722.58\",\n        \"data_criacao\": \"2025-06-22T16:26:48.323663Z\"\n    },\n    {\n        \"id\": 8,\n        \"nome\": \"Dolore Laboriosam\",\n        \"descricao\": \"Ullam ratione nostrum rem eum nisi ad.\",\n        \"preco\": \"965.22\",\n        \"data_criacao\": \"2025-06-22T16:26:48.304786Z\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Dolorem Nostrum\",\n        \"descricao\": \"Harum iusto magni eligendi optio officiis ipsa quibusdam cupiditate molestias totam amet eum.\",\n        \"preco\": \"648.58\",\n        \"data_criacao\": \"2025-06-22T16:26:48.293631Z\"\n    },\n    {\n        \"id\": 21,\n        \"nome\": \"Earum Nesciunt\",\n        \"descricao\": \"Voluptates sapiente hic eveniet ab suscipit optio.\",\n        \"preco\": \"513.33\",\n        \"data_criacao\": \"2025-06-22T16:26:48.342457Z\"\n    },\n    {\n        \"id\": 9,\n        \"nome\": \"Ex Totam\",\n        \"descricao\": \"Reprehenderit ipsum voluptatibus deserunt expedita quibusdam enim facere ea.\",\n        \"preco\": \"381.71\",\n        \"data_criacao\": \"2025-06-22T16:26:48.308015Z\"\n    },\n    {\n        \"id\": 15,\n        \"nome\": \"Excepturi Iusto\",\n        \"descricao\": \"Rem in quisquam voluptas itaque quia aperiam fugiat porro iure repellat eaque.\",\n        \"preco\": \"991.76\",\n        \"data_criacao\": \"2025-06-22T16:26:48.324668Z\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Fugit Doloremque\",\n        \"descricao\": \"Eveniet aut in atque facilis quia esse.\",\n        \"preco\": \"452.21\",\n        \"data_criacao\": \"2025-06-22T16:26:48.287572Z\"\n    },\n    {\n        \"id\": 1,\n        \"nome\": \"Fugit Harum\",\n        \"descricao\": \"Quis sequi esse magnam blanditiis odio blanditiis ad libero officia aliquid excepturi.\",\n        \"preco\": \"618.75\",\n        \"data_criacao\": \"2025-06-22T16:26:48.281012Z\"\n    },\n    {\n        \"id\": 18,\n        \"nome\": \"Id Laborum\",\n        \"descricao\": \"Sapiente repellat earum optio atque ullam assumenda magnam labore minima placeat.\",\n        \"preco\": \"990.74\",\n        \"data_criacao\": \"2025-06-22T16:26:48.334120Z\"\n    },\n    {\n        \"id\": 19,\n        \"nome\": \"Id Ut\",\n        \"descricao\": \"Fugiat voluptatem optio necessitatibus voluptatem dolor quidem.\",\n        \"preco\": \"875.19\",\n        \"data_criacao\": \"2025-06-22T16:26:48.336651Z\"\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Ipsum Eos\",\n        \"descricao\": \"Voluptatibus consequuntur ea rem quod est iusto provident.\",\n        \"preco\": \"468.58\",\n        \"data_criacao\": \"2025-06-22T16:26:48.297696Z\"\n    },\n    {\n        \"id\": 10,\n        \"nome\": \"Laudantium Pariatur\",\n        \"descricao\": \"Aliquid incidunt totam corporis fugiat et cum magnam ullam reprehenderit.\",\n        \"preco\": \"617.10\",\n        \"data_criacao\": \"2025-06-22T16:26:48.311042Z\"\n    },\n    {\n        \"id\": 27,\n        \"nome\": \"Meu Produto de Teste\",\n        \"descricao\": \"Uma descrição incrível.\",\n        \"preco\": \"150.00\",\n        \"data_criacao\": \"2025-06-22T17:18:45.884163Z\"\n    },\n    {\n        \"id\": 17,\n        \"nome\": \"Nihil Fugit\",\n        \"descricao\": \"Sed maiores recusandae aut quos at quasi.\",\n        \"preco\": \"556.87\",\n        \"data_criacao\": \"2025-06-22T16:26:48.331104Z\"\n    },\n    {\n        \"id\": 24,\n        \"nome\": \"Pariatur Quos\",\n        \"descricao\": \"Enim neque distinctio a eveniet corporis voluptatibus quia cum facilis nostrum eum.\",\n        \"preco\": \"769.51\",\n        \"data_criacao\": \"2025-06-22T16:26:48.351727Z\"\n    },\n    {\n        \"id\": 22,\n        \"nome\": \"Quos Provident\",\n        \"descricao\": \"Error modi explicabo doloribus atque vel sit optio saepe quam.\",\n        \"preco\": \"887.72\",\n        \"data_criacao\": \"2025-06-22T16:26:48.344969Z\"\n    },\n    {\n        \"id\": 16,\n        \"nome\": \"Reiciendis Facilis\",\n        \"descricao\": \"Sit illum reiciendis nam omnis veniam quo.\",\n        \"preco\": \"35.04\",\n        \"data_criacao\": \"2025-06-22T16:26:48.328081Z\"\n    },\n    {\n        \"id\": 20,\n        \"nome\": \"Repudiandae Vero\",\n        \"descricao\": \"Animi alias voluptatum quidem quibusdam nobis natus ducimus laborum dignissimos minus.\",\n        \"preco\": \"144.15\",\n        \"data_criacao\": \"2025-06-22T16:26:48.339438Z\"\n    },\n    {\n        \"id\": 12,\n        \"nome\": \"Sed Cum\",\n        \"descricao\": \"Unde ducimus quasi odit veritatis placeat.\",\n        \"preco\": \"808.54\",\n        \"data_criacao\": \"2025-06-22T16:26:48.316582Z\"\n    },\n    {\n        \"id\": 2,\n        \"nome\": \"Sint Nostrum\",\n        \"descricao\": \"Quisquam commodi incidunt porro sunt dignissimos.\",\n        \"preco\": \"427.27\",\n        \"data_criacao\": \"2025-06-22T16:26:48.285056Z\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Soluta Molestias\",\n        \"descricao\": \"Laborum error autem assumenda expedita accusamus culpa suscipit provident explicabo dolores assumenda.\",\n        \"preco\": \"64.30\",\n        \"data_criacao\": \"2025-06-22T16:26:48.289079Z\"\n    },\n    {\n        \"id\": 13,\n        \"nome\": \"Tempora Numquam\",\n        \"descricao\": \"Itaque qui tenetur reiciendis dolorum odit fugiat dolorem dolores eos odit aut.\",\n        \"preco\": \"553.07\",\n        \"data_criacao\": \"2025-06-22T16:26:48.319113Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Contar Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/produtos/contar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								"contar"
+							]
+						},
+						"description": "## GET Contar Produtos\n\n**Method:** GET  \n**URL:** `{{base_url}}/produtos/contar`\n\nEsse endpoint retorna uma contagem do total de produtos disponíveis no sistema. Nenhum parâmentro de request adicional é necessário para essa operação.\n\n### Response\n\n**Status Code:** 200  \n**Content-Type:** application/json\n\nA resposta retorna um objeto JSON contendo o número total de produtos.\n\n``` json\n{\n  \"total\": <integer>\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Sucesso 200 OK - Contar Produtos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produtos/contar",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"contar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 18:23:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 24\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar Produto por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/produtos/{{id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								"{{id}}"
+							]
+						},
+						"description": "## GET\n\nUsado para buscar dados sobre um Produto específico.\n\n### Request\n\n- **Método**: GET\n    \n- **Endpoint**: `{{base_url}}/produtos/{{id}}`\n    \n\n### Response\n\nRetorna um objeto JSON contendo o Produto selecionado contendo os seguintes campos:\n\n- `id`: identificador único do Produto.\n    \n- `nome`: nome do Produto.\n    \n- `descricao`: descrição detalhada do Produto.\n    \n- `preco`: preço do Produto.\n    \n- `data_criacao`: data de criação do Produto.\n    \n\n### Examplo da estrutura\n\n``` json\n{\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"price\": \"number\",\n      \"data_criacao\": \"date\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Sucesso 200 OK - Buscar por ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/produtos/{{id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:29:26 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"nome\": \"Fugit Harum\",\n    \"descricao\": \"Quis sequi esse magnam blanditiis odio blanditiis ad libero officia aliquid excepturi.\",\n    \"preco\": \"618.75\",\n    \"data_criacao\": \"2025-06-22T16:26:48.281012Z\"\n}"
+						},
+						{
+							"name": "Erro 404 Not Found - Buscar por ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/produtos/{{id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:30:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"No Produto matches the given query.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Buscar Produto por Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/produtos/buscar",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "<nome_do_produto>",
+									"disabled": true
+								}
+							]
+						},
+						"description": "### GET Buscar Produto\n\nEsse endpoint permite aos usuários buscarem os produtos com base no seu nome. Ele retorna uma lista de produtos que batrem com o parametro específico.\n\n### Request\n\n- **Method:** GET\n    \n- **URL:** `{{base_url}}/produtos/buscar`\n    \n- **Query Parameters:**\n    \n    - `nome` (string): O nome do produto. Esse parâmentro é necessário para filtrar os produtos na base de dados.\n        \n\n### Response\n\n- **Status Code:** 200 OK\n    \n- **Content-Type:** application/json\n    \n- Body da resposta:  \n    É uma array em JSON que contém os objetos que representam os produtos encontrados. Cada produto tem a seguinte estrutura:\n    \n    - `id`: identificador único do Produto.\n        \n    - `nome`: nome do Produto.\n        \n    - `descricao`: descrição detalhada do Produto.\n        \n    - `preco`: preço do Produto.\n        \n    - `data_criacao`: data de criação do Produto.\n        \n\n### Exemplo Response\n\n``` json\n[\n  {\n    \"id\": 0,\n    \"nome\": \"\",\n    \"descricao\": \"\",\n    \"preco\": \"\",\n    \"data_criacao\": \"\"\n  }\n]\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Sucesso 200 OK - Buscar por Nome",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produtos/buscar?nome=asdfgsdf",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"buscar"
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "asdfgsdf"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 18:14:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 22,\n        \"nome\": \"Quos Provident\",\n        \"descricao\": \"Error modi explicabo doloribus atque vel sit optio saepe quam.\",\n        \"preco\": \"887.72\",\n        \"data_criacao\": \"2025-06-22T16:26:48.344969Z\"\n    }\n]"
+						},
+						{
+							"name": "Erro 400 Bad Request - Buscar por Nome",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produtos/buscar",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"buscar"
+									],
+									"query": [
+										{
+											"key": "nome",
+											"value": "<nome_do_produto>",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 18:42:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detalhe\": \"Parâmetro 'nome' é obrigatório.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Criar Produto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Meu Produto de Teste\",\n    \"descricao\": \"Uma descrição incrível.\",\n    \"preco\": \"150.00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/produtos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								""
+							]
+						},
+						"description": "## POST para criar Produto\n\nEsse request é usado para criar um novo Produto no sistema. Ele manda os detalhes do produto no formato JSON para o endpoint da API\n\n### Request Body\n\nO corpo do request deve ser no formato JSON e incluir os seguintes parâmetros:\n\n- `nome` (string): Nome do Produto.\n    \n- `descricao` (string): Breve descrição do Produto.\n    \n- `preco` (string): O preço do produto, formatado como string.\n    \n\n#### Exemplo de Body\n\n``` json\n{\n  \"nome\": \"Meu Produto de Teste\",\n  \"descricao\": \"Uma descrição incrível.\",\n  \"preco\": \"150.00\"\n}\n\n ```\n\n### Response\n\nUm request bem sucedido vai retornar um status `201 Created` junto com uma resposta JSON contendo um objeto no seguinte formato:\n\n- `id` (integer): Identificador único.\n    \n- `nome` (string): Nome do produto.\n    \n- `descricao` (string): A descrição do produto.\n    \n- `preco` (string): O preço do Produto.\n    \n- `data_criacao` (string): Data e hora em que o Produto foi criado."
+					},
+					"response": [
+						{
+							"name": "Sucesso 201 OK - Criar Produto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Meu Produto de Teste\",\n    \"descricao\": \"Uma descrição incrível.\",\n    \"preco\": \"150.00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/produtos/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:18:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 27,\n    \"nome\": \"Meu Produto de Teste\",\n    \"descricao\": \"Uma descrição incrível.\",\n    \"preco\": \"150.00\",\n    \"data_criacao\": \"2025-06-22T17:18:45.884163Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar Produto",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Meu Produto\",\r\n    \"descricao\": \"Uma descrição.\",\r\n    \"preco\": \"200.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/produtos/{{id}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								"{{id}}",
+								""
+							]
+						},
+						"description": "## Update Produto\n\nEsse endpoint permite autualizar os detalhes de um produto específico identificado pelo seu `id`.\n\n### Request Body\n\nO body do request deve ser em JSON e conter os sequintes campos:\n\n- **nome** (string): Nome do Produto.\n    \n- **descricao** (string): Descrição do produto.\n    \n- **preco** (string): Preço do produto formatado como uma string (ex., \"200.00\").\n    \n\n**Example Request Body:**\n\n``` json\n{\n  \"nome\": \"Meu Produto\",\n  \"descricao\": \"Uma descrição.\",\n  \"preco\": \"200.00\"\n}\n\n ```"
+					},
+					"response": [
+						{
+							"name": "Sucesso 200 Ok - Atualizar Produto",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Meu Produto\",\r\n    \"descricao\": \"Uma descrição.\",\r\n    \"preco\": \"200.00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/produtos/27/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"27",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:34:10 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 27,\n    \"nome\": \"Meu Produto\",\n    \"descricao\": \"Uma descrição.\",\n    \"preco\": \"200.00\",\n    \"data_criacao\": \"2025-06-22T17:18:45.884163Z\"\n}"
+						},
+						{
+							"name": "Erro 400 Bad Request - Atualizar Produto",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Meu Produto\",\r\n    \"descricao\": \"Uma descrição.\",\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/produtos/27/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"27",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:35:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"JSON parse error - Expecting property name enclosed in double quotes: line 4 column 1 (char 67)\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletar Produto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/produtos/{{id}}/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"produtos",
+								"{{id}}",
+								""
+							]
+						},
+						"description": "## DELETE /produtos/{id}\n\nEsse endpoint é usado para deletar um produto específico do catálogo. O Produto é identificado pelo seu ID único, que deve ser passado como parametro pelo URL.\n\n### Parâmetros da Request\n\n- **Path Parameter:**\n    \n    - `id` (integer): Identificador único do pedido."
+					},
+					"response": [
+						{
+							"name": "Sucesso 204 OK - Deletar Produto",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produtos/25/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"25",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:42:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Erro 404 Not Found - Deletar Produto",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/produtos/60/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"produtos",
+										"60",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 22 Jun 2025 17:45:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"No Produto matches the given query.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api_v1"
+		},
+		{
+			"key": "id",
+			"value": "30"
+		}
+	]
+}
